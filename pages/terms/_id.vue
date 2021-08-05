@@ -1,7 +1,7 @@
 <template>
-  <v-sheet rounded="lg" height="400">
-    공지사항
-  </v-sheet>
+  <main>
+      푸푸
+  </main>
 </template>
 
 <script>

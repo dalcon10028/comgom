@@ -2,7 +2,6 @@
   <v-footer
     dark
     padless
-    absolute
   >
     <v-card
       flat
@@ -24,14 +23,18 @@
         </v-btn>
       </v-card-text>
 
-      <v-card-text class="white--text pt-0">
-        개인정보처리방침 이용약관 이메일 무단 수집거부 운영팀 안내 Contact Us
+      <v-card-text class="pt-0">
+        <nuxt-link class="white--text text-decoration-none" to="terms/1">개인정보처리방침</nuxt-link> |
+        <nuxt-link class="white--text text-decoration-none" to="terms/1">이용약관</nuxt-link> |
+        <nuxt-link class="white--text text-decoration-none" to="terms/1">이메일 무단 수집거부</nuxt-link> |
+        <nuxt-link class="white--text text-decoration-none" to="terms/1">운영팀 안내</nuxt-link> |
+        <nuxt-link class="white--text text-decoration-none" to="terms/1">Contact Us</nuxt-link>
       </v-card-text>
 
       <v-divider></v-divider>
 
-      <v-card-text class="white--text">
-        2021 — <strong>@Dalcon</strong>
+      <v-card-text>
+        2021 — <strong>@Daerimi</strong>
       </v-card-text>
     </v-card>
   </v-footer>

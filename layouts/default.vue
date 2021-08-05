@@ -1,6 +1,6 @@
 <template>
   <v-app id="app">
-    <v-main>
+    <v-main class="grey lighten-3">
       <Header />
       <v-container>
         <v-row>

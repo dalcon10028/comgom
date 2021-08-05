@@ -1,45 +1,16 @@
 <template>
-  <v-card
-      elevation="3"
-      width="256"
-    >
-      <v-navigation-drawer
-        floating
-        permanent
-      >
-        <v-list
-          dense
-          rounded
-        >
-          <v-list-item
-            v-for="item in items"
-            :key="item.title"
-            link
-          >
-            <v-list-item-icon>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-icon>
-
-            <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
-      </v-navigation-drawer>
-    </v-card>
+  <v-sheet rounded="lg">
+    사이드 바
+    사이드 바
+    사이드 바
+    사이드 바
+    사이드 바
+    사이드 바
+    사이드 바
+  </v-sheet>
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      items: [
-        { title: 'Home', icon: 'mdi-view-dashboard' },
-        { title: 'About', icon: 'mdi-forum' },
-      ],
-    }
-  }
-}
 </script>
 
 <style>
