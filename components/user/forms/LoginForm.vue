@@ -12,7 +12,7 @@
         <v-text-field
           v-model="password"
           type="password"
-          :rules="emailRules"
+          :rules="passwordRules"
           label="비밀번호 (8 글자 이상) *"
           required
         ></v-text-field>
@@ -23,14 +23,14 @@
           class="mr-4"
           block
           large
-          @click="validate"
+          @click="login"
         >
           로그인
         </v-btn>
       </v-form>
         <div class="mt-8">
-            <nuxt-link to="finduser">계정 찾기</nuxt-link> |
-            <nuxt-link to="signin">회원가입</nuxt-link>
+            <nuxt-link to="forgot-password">비밀번호 찾기</nuxt-link> |
+            <nuxt-link to="register">회원가입</nuxt-link>
         </div>
       <v-divider class="ma-4"></v-divider>
 
@@ -44,20 +44,35 @@
 <script>
 export default {
  data() {
-    return {
+  return {
     valid: true,
-    password: '',
-    nameRules: [
-    v => !!v || 'Name is required',
-    v => (v && v.length <= 10) || 'Name must be less than 10 characters',
-    ],
     email: '',
     emailRules: [
-    v => !!v || 'E-mail is required',
-    v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+      v => !!v || 'E-mail is required',
+      v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
     ],
-    };
- }
+    password: '',
+    passwordRules: [
+      v => !!v || '비밀번호를 입력해주세요!',
+      v => (v && v.length >= 8) || '비밀번호는 8자리 이상이여야 합니다!',
+    ],
+  };
+ },
+  methods: {
+    async login() {
+      try {
+        if (!this.$refs.form.validate()) return;
+        const userData = {
+          identifier: this.email,
+          password: this.password
+        };
+        await this.$auth.loginWith('local', { data: userData });
+        alert('로그인 성공!');
+      } catch (error) {
+        alert(error);
+      }
+    }
+  }
 }
 </script>
 
