@@ -9,7 +9,7 @@
           text
           v-bind="attrs"
           v-on="on"
-          @click="$router.push(board.code)"
+          @click="$router.push(`/${board.code}`)"
         >
           {{ board.name }}
         </v-btn>
@@ -20,7 +20,7 @@
             <v-list-item
               v-for="(menu, idx) in board.boards"
               :key="idx"
-              @click="$router.push(`${board.code}/${menu.code}`)"
+              @click="$router.push(`/${board.code}/${menu.code}`)"
             >
             <v-list-item-title>{{ menu.name }}</v-list-item-title>
             </v-list-item>

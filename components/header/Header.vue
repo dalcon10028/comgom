@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar id="app-bar" app hide-on-scroll color="primary">
+  <v-app-bar app hide-on-scroll color="primary" dark>
       <v-container class="py-0 fill-height">
               <v-app-bar-title>
                   <Logo />
@@ -43,7 +43,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#app-bar {
-    color: white;
-}
 </style>

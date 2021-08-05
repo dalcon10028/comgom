@@ -7,7 +7,8 @@
     <v-card
       flat
       tile
-      class="indigo lighten-1 white--text text-center"
+      color="accent"
+      class="text-center"
       width="100%"
     >
       <v-card-text>
