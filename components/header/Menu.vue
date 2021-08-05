@@ -9,20 +9,20 @@
           text
           v-bind="attrs"
           v-on="on"
-          @click="$router.push(menu.href)"
+          @click="$router.push(board.code)"
         >
-          {{ menu.title }}
+          {{ board.name }}
         </v-btn>
       </template>
 
       <v-list>
           <v-list-item-group>
             <v-list-item
-              v-for="(item, idx) in menu.subMenus"
+              v-for="(menu, idx) in board.boards"
               :key="idx"
-              @click="$router.push(menu.href + item.href)"
+              @click="$router.push(`${board.code}/${menu.code}`)"
             >
-            <v-list-item-title>{{ item.subTitle }}</v-list-item-title>
+            <v-list-item-title>{{ menu.name }}</v-list-item-title>
             </v-list-item>
           </v-list-item-group>
       </v-list>
@@ -32,7 +32,7 @@
 <script>
 export default {
   props: {
-    menu: {
+    board: {
       type: Object,
       required: true
     }  
