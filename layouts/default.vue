@@ -1,11 +1,11 @@
 <template>
-  <v-app>
+  <v-app id="app">
     <v-main>
       <Header />
       <v-container>
         <v-row>
           <v-col><Nuxt /></v-col>
-          <v-col cols="2"><Sidebar /></v-col>
+          <v-col cols="3"><Sidebar /></v-col>
         </v-row>
       </v-container>
       <Footer />
@@ -21,3 +21,12 @@ export default {
   components: { Header, Footer, Sidebar }
 }
 </script>
+
+<style lang="scss">
+$body-font-family: 'Noto Sans KR';
+
+#app {
+  background-color: #f8f8f8;
+  font-family: $body-font-family, sans-serif;
+}
+</style>

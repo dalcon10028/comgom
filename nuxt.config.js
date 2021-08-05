@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+
 require("dotenv").config();
 
 export default {
@@ -16,7 +17,10 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap' },
     ]
   },
 
@@ -50,15 +54,25 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
+      dark: false,
       themes: {
+        light: {
+          primary: '#4fc2f8',
+          secondary: '#9675ce',
+          accent: '#536dfe',
+          error: '#ff5353',
+          info: '#19ffff',
+          success: '#69f0ae',
+          warning: '#fee580'
+        },
         dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          primary: '#90caf8',
+          secondary: '#ba69c8',
+          accent: '#5c6bc0',
+          error: '#e57373',
+          info: '#80deea',
+          success: '#81c683',
+          warning: '#ffb74e'
         }
       }
     }
