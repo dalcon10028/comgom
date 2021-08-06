@@ -1,8 +1,10 @@
 <template>
   <v-app dark class="text-center">
     <v-sheet class="pa-3" outlined rounded="lg">
-      <template v-if="error.statusCode === 404">
-        <v-img src="/404.png" max-height="300"></v-img>
+      <template  v-if="error.statusCode === 404">
+        <div class="d-flex justify-center"> 
+          <v-img src="/404.png" max-width="400" />
+        </div>
         <h1> {{ pageNotFound }} </h1>
       </template>
       <h1 v-else>

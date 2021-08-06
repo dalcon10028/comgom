@@ -18,6 +18,13 @@
       <template #[`item.created_at`]="{ item }">
         {{ item.created_at | formatDate }}
       </template>
+      <template #[`item.like`]="{ item }">
+        <template v-if="item.like">
+          <v-icon small color="error">mdi-heart</v-icon>
+          <span class="error--text">{{ `+ ${item.like}` }}</span>
+        </template>
+        <span v-else>0</span>
+      </template>
     </v-data-table>
     <div class="text-center pt-2">
       <v-pagination
