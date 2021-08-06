@@ -1,6 +1,6 @@
 <template>
-    <section>
-        <v-dialog
+  <section>
+    <v-dialog
       v-model="dialog"
       width="500"
     >
@@ -14,63 +14,58 @@
             <v-icon>mdi-magnify</v-icon>
         </v-btn>
       </template>
-      <v-form
-        ref="form"
-        v-model="valid"
-        lazy-validation
-        >
         <v-text-field
             v-model="keyword"
             filled
-            flat
-            :rules="keywordRules"
+            autofocus
             label="검색어를 입력하세요"
             required
             solo
             background-color="white"
             prepend-inner-icon="mdi-magnify"
             hide-details
-            @keydown.enter="validate"
+            @keydown.enter="search"
         ></v-text-field>
-        </v-form>
     </v-dialog>
-        <v-btn v-if="!isAuthenticated" rounded color="white" class="primary--text"  @click="$router.push('/user/login')">
+        <v-btn 
+            v-if="!isAuthenticated" 
+            rounded 
+            color="white" 
+            class="primary--text"
+            nuxt
+            to="/user/login">
             로그인
         </v-btn>
         <template v-else>
-            <v-btn rounded color="primary" @click="$router.push('/user/profile')">
-                프로필
-            </v-btn>
-            <v-btn rounded color="primary" @click="logout">
-                로그아웃
-            </v-btn>
+            <Avartar />
         </template>
-    </section>
+  </section>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import Avartar from './Avartar.vue';
 
 export default {
+  components: { Avartar },
     data() {
         return {
             dialog: false,
             valid: true,
             keyword: '',
-            keywordRules: [ v => !!v ]
         }
     },
 
     computed: {
         ...mapGetters(["isAuthenticated", "loggedInUser"])
     },
-    
+
     methods: {
-        validate () {
-            if (!this.$refs.form.validate()) return ;
-            this.$router.push(`/search/${this.keyword}`)
+        search () {
             this.dialog = false;
+            // this.$router.push(`/search/${this.keyword}`)
         },
+
     }
 }
 </script>

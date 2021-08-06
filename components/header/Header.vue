@@ -33,12 +33,6 @@ export default {
     async created() {
       this.board_groups = await this.$axios.$get('/board-groups');
     },
-
-    methods: {
-        async logout() {
-            await this.$auth.logout();
-        }
-    }
 }
 </script>
 
