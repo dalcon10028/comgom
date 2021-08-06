@@ -47,7 +47,7 @@ export default {
   modules: ['@nuxtjs/axios', '@nuxtjs/dotenv', '@nuxtjs/auth'],
 
   axios: {
-    baseURL: process.env.API_AUTH_URL
+    baseURL: 'http://localhost:1337'
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify

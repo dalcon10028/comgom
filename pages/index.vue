@@ -7,26 +7,26 @@
     </v-row>
     <v-row>
       <v-col>
-        <Notice />
+        <Posts :posts="postsFree" />
       </v-col>
       <v-col>
-        <Notice />
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col>
-        <Notice />
-      </v-col>
-      <v-col>
-        <Notice />
+        <Posts />
       </v-col>
     </v-row>
     <v-row>
       <v-col>
-        <Notice />
+        <Posts />
       </v-col>
       <v-col>
-        <Notice />
+        <Posts />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <Posts />
+      </v-col>
+      <v-col>
+        <Posts />
       </v-col>
     </v-row>
   </main>
@@ -34,12 +34,15 @@
 
 <script>
 import Carousel from '~/components/main/Carousel.vue'
-import Notice from '~/components/main/Notice.vue'
-
+import Posts from '~/components/main/Posts.vue'
 
 export default {
-  components: { Notice, Carousel },
+  components: { Posts, Carousel },
 
+  async asyncData({ $axios }) {
+    const postsFree = await $axios.$get(`posts?_where[board][code]=free&_limit=8`);
+    return { postsFree }
+  },
 }
 </script>
 

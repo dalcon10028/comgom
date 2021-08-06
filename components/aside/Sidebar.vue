@@ -1,16 +1,14 @@
 <template>
   <v-sheet rounded="lg">
-    사이드 바
-    사이드 바
-    사이드 바
-    사이드 바
-    사이드 바
-    사이드 바
-    사이드 바
+    <HotPosts />
   </v-sheet>
 </template>
 
 <script>
+import HotPosts from './HotPosts.vue'
+export default {
+  components: { HotPosts },
+}
 </script>
 
 <style>

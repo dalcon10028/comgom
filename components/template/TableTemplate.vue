@@ -1,6 +1,6 @@
 <template>
   <section>
-      <v-data-table
+    <v-data-table
       :headers="headers"
       :items="posts"
       :page.sync="page"
@@ -38,15 +38,15 @@ export default {
       const betweenTime = Math.floor((now.getTime() - date.getTime()) / 1000 / 60);
       if (betweenTime < 1) return '방금전';
       if (betweenTime < 60) {
-          return `${betweenTime}분전`;
+        return `${betweenTime}분전`;
       }
       const betweenTimeHour = Math.floor(betweenTime / 60);
       if (betweenTimeHour < 24) {
-          return `${betweenTimeHour}시간전`;
+        return `${betweenTimeHour}시간전`;
       }
       const betweenTimeDay = Math.floor(betweenTime / 60 / 24);
       if (betweenTimeDay < 3) {
-          return `${betweenTimeDay}일전`;
+        return `${betweenTimeDay}일전`;
       }
       let month = '' + (date.getMonth() + 1);
       let day = '' + date.getDate();
@@ -86,7 +86,7 @@ export default {
         {
           text: '작성자',
           sortable: false,
-          value: 'author.username',
+          value: 'author.nickname',
         },
         {
             text: '날짜',

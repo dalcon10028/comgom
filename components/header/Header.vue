@@ -30,8 +30,8 @@ export default {
         }
     },
 
-    async fetch() {
-      this.board_groups = await this.$axios.$get('http://localhost:1337/board-groups');
+    async created() {
+      this.board_groups = await this.$axios.$get('/board-groups');
     },
 
     methods: {
