@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app hide-on-scroll color="primary" dark min-width="662">
+  <v-app-bar app hide-on-scroll color="primary" dark min-width="781">
       <v-container class="py-0 fill-height">
               <v-app-bar-title>
                   <Logo />
