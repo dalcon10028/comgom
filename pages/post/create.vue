@@ -13,16 +13,27 @@
       <client-only>
         <Tiptap v-model="content" />
       </client-only>
+      <v-toolbar>
+        <v-btn text large color="error" @click="$router.go(-1)">
+          <v-icon>mdi-arrow-left</v-icon>
+          나가기
+        </v-btn>
+        <v-spacer></v-spacer>
+        <Temporarily :title="title" :content="content" @changePost="changePost" />
+        <v-btn large color="success">제출하기</v-btn>
+      </v-toolbar>
     </v-sheet>
   </section>
 </template>
 
 <script>
+import Temporarily from '~/components/post/Temporarily.vue'
 import Tiptap from '~/components/post/Tiptap.vue'
 
 export default {
   components: {
-    Tiptap
+    Tiptap,
+    Temporarily
   },
 
   layout: 'no-aside',
@@ -30,9 +41,16 @@ export default {
   data() {
     return {
       title: '',
-      content: '<p><br>sdfasdf</p>',
+      content: '<p></p>',
     }
   },
+
+  methods: {
+    changePost({ title, content }) {
+      this.title = title;
+      this.content = content;
+    }
+  }
 }
 </script>
 

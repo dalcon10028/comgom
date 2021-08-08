@@ -61,9 +61,9 @@ export default {
           secondary: '#9675ce',
           accent: '#536dfe',
           error: '#ff5353',
-          info: '#19ffff',
-          success: '#69f0ae',
-          warning: '#fee580'
+          info: '#80deea',
+          success: '#81c683',
+          warning: '#ffb74e'
         },
         dark: {
           primary: '#90caf8',
