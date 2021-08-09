@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1>{{ title }}</h1>
-    <p>{{ explanation }}</p>
+    <p>{{ explanation || '' }}</p>
   </section>
 </template>
 

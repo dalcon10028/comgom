@@ -9,9 +9,19 @@
       class="elevation-1"
       @page-count="pageCount = $event"
     >
+      <template #top>
+        <v-toolbar flat>
+          <v-spacer></v-spacer>
+          <v-btn color="accent" nuxt :to="`/post/write/${titleId}`">글쓰기</v-btn>
+        </v-toolbar>
+      </template>
+      <template #[`item.id`]="{ item }">
+        <template v-if="item.post_label">공지</template>
+        <template v-else>{{ item.id }}</template>
+      </template>
       <template #[`item.title`]="{ item }">
-        <v-btn class="no-background-hover px-0" text :ripple="false">
-          <strong :class="`${item.post_label.color}--text`">[{{ item.post_label.label }}]&nbsp;</strong>
+        <v-btn class="no-background-hover px-0" text :ripple="false" nuxt :to="`/post/${item.id}`">
+          <strong v-if="item.post_label" :class="`${item.post_label.color}--text`">[{{ item.post_label.label }}]&nbsp;</strong>
           {{ item.title }}
         </v-btn>
       </template>
@@ -37,7 +47,6 @@
 
 <script>
 export default {
-
   filters: {
     formatDate(timestamp) {
       const now = new Date();
@@ -68,6 +77,10 @@ export default {
     }
   },
   props: {
+    titleId: {
+      type: String,
+      required: true
+    },
     posts: {
         type: Array,
         required: true
@@ -84,6 +97,7 @@ export default {
           text: '번호',
           sortable: false,
           value: 'id',
+          width: '10%'
         },
         {
           text: '제목',
@@ -94,22 +108,26 @@ export default {
           text: '작성자',
           sortable: false,
           value: 'author.nickname',
+          width: '10%'
         },
         {
-            text: '날짜',
+          text: '날짜',
           sortable: false,
           value: 'created_at',
+          width: '10%'
         },
         {
           text: '조회수',
           sortable: false,
           value: 'view',
+          width: '10%'
         },
         
         {
           text: '좋아요',
           sortable: false,
           value: 'like',
+          width: '10%'
         },
       ],
     }
@@ -119,6 +137,6 @@ export default {
 
 <style lang="scss" scoped>
 .no-background-hover::before {
-   background-color: transparent !important;
+  background-color: transparent !important;
 }
 </style>

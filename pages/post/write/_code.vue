@@ -49,7 +49,7 @@ export default {
     changePost({ title, content }) {
       this.title = title;
       this.content = content;
-    }
+    },
   }
 }
 </script>

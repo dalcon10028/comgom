@@ -1,7 +1,7 @@
 <template>
   <main>
     <TemplateTitle :title="name" :explanation="explanation"/>
-    <TableTemplate :posts="posts"/>
+    <TableTemplate :title-id="$route.params.id" :posts="posts"/>
   </main>
 </template>
 
