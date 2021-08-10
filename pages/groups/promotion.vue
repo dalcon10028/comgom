@@ -1,7 +1,7 @@
 <template>
   <main>
     <TemplateTitle :title="name" :explanation="explanation"/>
-    <TableTemplate :title-id="$route.params.id" :posts="posts"/>
+    <TableTemplate :title-id="id" :posts="posts"/>
   </main>
 </template>
 
@@ -15,8 +15,11 @@ export default {
     TemplateTitle
   },
 
-  async asyncData({ $axios, params }) {
-    const { name, explanation } = await $axios.$get(`/boards/${params.id}`);
+  async asyncData({ $axios }) {
+    const boardData = await $axios.$get('/boards', {
+      params: { code: 'promotion' }
+    });
+    const { id, name, explanation } = boardData[0];
     const notices = await $axios.$get('/posts', {
       params: {
         board: 2,
@@ -26,16 +29,12 @@ export default {
     });
     const posts = await $axios.$get('/posts', {
       params: {
-        board: params.id,
-        _limit: 9,
+        board: id,
         _sort: 'id:DESC'
       }
     });
-    return { name, explanation, posts: notices.concat(posts) }
+    return { id, name, explanation, posts: notices.concat(posts) }
   },
-
-  created() {
-  }
 }
 </script>
 

@@ -11,6 +11,7 @@ export default {
     components: {
         RegisterForm
     },
+  layout: 'no-aside',
     middleware: "guest",
 }
 </script>

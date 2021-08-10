@@ -20,7 +20,7 @@
           <v-list-item
             v-for="(menu, idx) in board.boards"
             :key="idx"
-            @click="$router.push(`/${board.code}/${menu.id}`)"
+            @click="$router.push(`/${board.code}/${menu.code}`)"
           >
           <v-list-item-title>{{ menu.name }}</v-list-item-title>
           </v-list-item>

@@ -1,7 +1,7 @@
 <template>
   <v-sheet rounded="lg" outlined>
     <v-list>
-      <v-subheader>자유게시판</v-subheader>
+      <v-subheader>최근 게시물</v-subheader>
       <v-list-item-group>
         <template v-for="(post, i) in posts">
           <v-divider :key="i"></v-divider>
@@ -34,16 +34,13 @@ export default {
     }
   },
 
-  data() {
-    return {
-      posts: []
-    }
-  },
 
-  async fetch() {
-    const posts = await this.$axios.$get(`http://localhost:1337/posts?_where[board][code]=free&_limit=8`);
-    this.posts = posts;
-  },
+  props: {
+    posts: {
+      type: Array,
+      required: true,
+    }
+  }
 }
 </script>
 

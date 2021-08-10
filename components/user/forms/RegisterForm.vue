@@ -5,7 +5,7 @@
         <v-text-field
           v-model="email"
           :rules="emailRules"
-          label="이메일 *"
+          label="대림대학교 이메일 * @email.daelim.ac.kr"
           required
         ></v-text-field>
 
@@ -32,17 +32,13 @@
           large
           @click="register"
         >
-          로그인
+          회원가입
         </v-btn>
     </v-form>
-      <div class="mt-8">
-          <nuxt-link to="finduser">계정 찾기</nuxt-link> |
-          <nuxt-link to="signin">회원가입</nuxt-link>
-      </div>
+    <v-btn class="mt-8" text color="accent">로그인으로 돌아가기</v-btn>
     <v-divider class="ma-4"></v-divider>
-
     <div class="ma-5 text-center">
-      <p>소셜 계정으로 로그인</p>
+      <v-btn text color="accent">학생증 인증으로 회원가입</v-btn>
     </div>
     </v-card>
   </section>
@@ -56,7 +52,7 @@ export default {
       email: '',
       emailRules: [
         v => !!v || '이메일을 입력해주세요!',
-        v => /.+@.+\..+/.test(v) || '유효한 이메일이 아닙니다!',
+        v => /.+@email[.]daelim[.]ac[.]kr/.test(v) || '유효한 대림대학교 이메일이 아닙니다!',
       ],
       username: '',
       usernameRules: [

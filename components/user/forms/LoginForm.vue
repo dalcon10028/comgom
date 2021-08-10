@@ -29,14 +29,9 @@
         </v-btn>
       </v-form>
         <div class="mt-8">
-            <nuxt-link to="forgot-password">비밀번호 찾기</nuxt-link> |
-            <nuxt-link to="register">회원가입</nuxt-link>
+          <v-btn text nuxt color="accent" to="forgot-password">비밀번호 찾기</v-btn>
+          <v-btn text nuxt color="accent" to="register">회원가입</v-btn>
         </div>
-      <v-divider class="ma-4"></v-divider>
-
-      <div class="ma-5 text-center">
-        <p>소셜 계정으로 로그인</p>
-      </div>
       </v-card>
   </section>
 </template>

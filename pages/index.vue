@@ -9,25 +9,6 @@
       <v-col>
         <Posts :posts="postsFree" />
       </v-col>
-      <v-col>
-        <Posts />
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col>
-        <Posts />
-      </v-col>
-      <v-col>
-        <Posts />
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col>
-        <Posts />
-      </v-col>
-      <v-col>
-        <Posts />
-      </v-col>
     </v-row>
   </main>
 </template>
@@ -40,7 +21,7 @@ export default {
   components: { Posts, Carousel },
 
   async asyncData({ $axios }) {
-    const postsFree = await $axios.$get(`posts?_where[board][code]=free&_limit=8`);
+    const postsFree = await $axios.$get(`posts?_limit=20`);
     return { postsFree }
   },
 }

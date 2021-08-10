@@ -2,7 +2,7 @@
   <v-app id="app">
     <v-main class="grey lighten-3">
       <Header />
-      <v-container>
+      <v-container id="app-body">
         <v-row>
           <v-col><Nuxt /></v-col>
           <v-col cols="3"><Sidebar /></v-col>
@@ -28,5 +28,9 @@ $body-font-family: 'Noto Sans KR';
 #app {
   background-color: #f8f8f8;
   font-family: $body-font-family, sans-serif;
+}
+
+#app-body {
+  min-height: 80vh;
 }
 </style>

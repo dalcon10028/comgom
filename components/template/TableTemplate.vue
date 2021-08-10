@@ -78,7 +78,7 @@ export default {
   },
   props: {
     titleId: {
-      type: String,
+      type: Number,
       required: true
     },
     posts: {
