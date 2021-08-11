@@ -20,7 +20,7 @@
         </v-btn>
         <v-spacer></v-spacer>
         <Temporarily :title="title" :content="content" @changePost="changePost" />
-        <v-btn large color="success">제출하기</v-btn>
+        <v-btn large color="success" @click="submit">제출하기</v-btn>
       </v-toolbar>
     </v-sheet>
   </section>
@@ -50,6 +50,19 @@ export default {
       this.title = title;
       this.content = content;
     },
+
+    async submit() {
+      const postData = {
+        title: this.title,
+        board: this.$route.params.code,
+        author: this.$store.state.auth.user.id,
+        content: this.content
+      };
+      const res = await this.$axios.$post('/api/posts', postData);
+      console.log(res);
+      alert('성공적으로 게시되었습니다!');
+      this.$router.go(-1);
+    }
   }
 }
 </script>

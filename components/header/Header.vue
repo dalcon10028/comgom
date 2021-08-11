@@ -31,7 +31,7 @@ export default {
     },
 
     async created() {
-      this.board_groups = await this.$axios.$get('/board-groups');
+      this.board_groups = await this.$axios.$get('/api/board-groups');
     },
 }
 </script>

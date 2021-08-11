@@ -52,7 +52,8 @@ export default {
 
   proxy: {
     '/api/': { target: 'http://localhost:1337', pathRewrite: {'^/api/': ''}, changeOrigin: true },
-    '/daelim/': { target: 'https://www.daelim.ac.kr/', pathRewrite: {'^/daelim/': ''}, changeOrigin: true }
+    '/daelim/': { target: 'https://www.daelim.ac.kr/', pathRewrite: {'^/daelim/': ''}, changeOrigin: true },
+    '/image/': { target: 'https://u20112.imgbb.com/', pathRewrite: {'^/image/': ''}, changeOrigin: true }
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -88,12 +89,12 @@ export default {
       local: {
         endpoints: {
         login: {
-            url: 'auth/local',
+            url: '/api/auth/local',
             method: 'post',
             propertyName: 'jwt'
           },
           user: {
-            url: 'users/me',
+            url: '/api/users/me',
             method: 'get',
             propertyName: false
         },

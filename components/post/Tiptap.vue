@@ -30,12 +30,18 @@
       <v-btn icon :class="{ 'v-btn--active': editor.isActive('link') }" @click="setLink">
         <v-icon>mdi-link</v-icon>
       </v-btn>
-      <v-btn icon @click="sorry">
+      <!-- <v-btn icon @click="sorry">
         <v-icon>mdi-image</v-icon>
-      </v-btn>
+      </v-btn> -->
       <v-btn icon :class="{ 'v-btn--active': editor.isActive('codeBlock') }" @click="editor.chain().focus().toggleCodeBlock().run()">
         <v-icon>mdi-code-tags</v-icon>
       </v-btn>
+      <v-file-input
+        hide-input
+        hide-details
+        prepend-icon="mdi-image"
+        @change="uploadImage"
+      ></v-file-input>
     </v-toolbar>
     <v-card>
       <v-card-actions>
@@ -49,6 +55,8 @@
 import { Editor, EditorContent } from '@tiptap/vue-2'
 import StarterKit from '@tiptap/starter-kit'
 import Link from '@tiptap/extension-link'
+import Image from '@tiptap/extension-image'
+import Dropcursor from '@tiptap/extension-dropcursor'
 
 export default {
   components: {
@@ -79,7 +87,7 @@ export default {
   mounted() {
     this.editor = new Editor({
       extensions: [
-        StarterKit, Link
+        StarterKit, Link, Image, Dropcursor
       ],
       content: this.value,
       onUpdate: () => {
@@ -104,9 +112,26 @@ export default {
         .run()
     },
 
-    sorry() {
-      alert('빠른 시일내에 구현하도록 하겠습니다.. ㅜㅜ');
-    }
+    async uploadImage(file) {
+      const formData = new FormData();
+      formData.append('source', file);
+      formData.append('type', 'file');
+      formData.append('action', 'upload');
+      formData.append('timestamp', + new Date());
+      formData.append('auth_token', '0fe4bf7b0ebbcd35004e2f5adadb128670c7d8b1');
+      
+      try {
+        const { data } = await this.$axios({
+          method: 'post',
+          url: '/image/json',
+          data: formData,
+          headers: { "Content-Type": "multipart/form-data" }
+        });
+        this.editor.chain().focus().setImage({ src: data.image.display_url }).run();
+      } catch (error) {
+        alert(error);
+      }
+    },
   },
 }
 </script>
@@ -163,6 +188,10 @@ export default {
     img {
       max-width: 100%;
       height: auto;
+
+      &.ProseMirror-selectednode {
+        outline: 3px solid #68CEF8;
+      }
     }
 
     blockquote {
