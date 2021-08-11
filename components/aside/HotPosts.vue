@@ -34,7 +34,7 @@ export default {
   },
 
   async created() {
-    this.posts = await this.$axios.$get(`posts?_where[board][code]=free&_limit=5`);
+    this.posts = await this.$axios.$get(`/api/posts?_where[board][code]=free&_limit=5`);
   },
 }
 </script>

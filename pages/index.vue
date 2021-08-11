@@ -21,7 +21,7 @@ export default {
   components: { Posts, Carousel },
 
   async asyncData({ $axios }) {
-    const postsFree = await $axios.$get(`posts?_limit=20`);
+    const postsFree = await $axios.$get('/api/posts?_limit=20');
     return { postsFree }
   },
 }

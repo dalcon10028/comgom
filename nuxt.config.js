@@ -44,10 +44,15 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', '@nuxtjs/dotenv', '@nuxtjs/auth'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/dotenv', '@nuxtjs/auth', '@nuxtjs/proxy'],
 
   axios: {
-    baseURL: 'http://localhost:1337'
+    proxy: true
+  },
+
+  proxy: {
+    '/api/': { target: 'http://localhost:1337', pathRewrite: {'^/api/': ''}, changeOrigin: true },
+    '/daelim/': { target: 'https://www.daelim.ac.kr/', pathRewrite: {'^/daelim/': ''}, changeOrigin: true }
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
