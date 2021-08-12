@@ -17,14 +17,14 @@ export default {
 
   async asyncData({ $axios, params }) {
     const { name, explanation } = await $axios.$get(`/boards/${params.id}`);
-    const notices = await $axios.$get('/posts', {
+    const notices = await $axios.$get('/api/posts', {
       params: {
         board: 2,
         notice: true,
         _sort: 'id:DESC'
       }
     });
-    const posts = await $axios.$get('/posts', {
+    const posts = await $axios.$get('/api/posts', {
       params: {
         board: params.id,
         _limit: 9,

@@ -42,7 +42,7 @@ export default {
       try {
         if (!this.$refs.form.validate()) return;
         const userData = { email: this.email };
-        await this.$axios.post('auth/forgot-password', userData);
+        await this.$axios.post('/api/auth/forgot-password', userData);
         alert('이메일을 확인해주세요!');
       } catch (error) {
         alert(error);

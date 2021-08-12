@@ -5,8 +5,8 @@ require("dotenv").config();
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - comgom',
-    title: 'comgom',
+    titleTemplate: '%s - 대리미',
+    title: '대림대학교 커뮤니티',
     htmlAttrs: {
       lang: 'ko'
     },

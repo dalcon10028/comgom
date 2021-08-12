@@ -75,8 +75,9 @@ export default {
           username: this.username,
           password: this.password
         }
-        await this.$axios.post("auth/local/register", userData);
-        alert('이메일을 확인해주세요!');
+        await this.$axios.post("/api/auth/local/register", userData);
+        alert('이메일을 확인해주세요! 이메일이 보이지 않으신다면 스펨메일함을 확인해주세요!');
+        window.open('https://outlook.office.com/mail/inbox');
       } catch (error) {
         alert(error);
       }
