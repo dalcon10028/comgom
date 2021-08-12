@@ -43,8 +43,6 @@ export default {
     TeachingStaff
   },
 
-  layout: 'no-aside',
-
   async asyncData({ $axios }) {
     // getMonday
     const d = new Date();

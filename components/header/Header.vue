@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app hide-on-scroll color="primary" dark min-width="781">
+  <v-app-bar app hide-on-scroll color="primary" dark min-width="781" elevation="0" outlined>
       <v-container class="py-0 fill-height">
               <v-app-bar-title>
                   <Logo />
@@ -7,7 +7,7 @@
               <template v-for="(board, idx) in board_groups">
                   <Menu :key="idx" :board="board"/>
               </template>
-            <v-spacer></v-spacer>
+              <v-spacer></v-spacer>
             <Tool />
       </v-container>
     </v-app-bar>

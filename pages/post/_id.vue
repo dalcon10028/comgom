@@ -6,7 +6,7 @@
           {{ author.username }} {{ created_at }} 조회수 {{ view }} 좋아요 {{ like }}
       </v-card-subtitle>
       <v-card-text v-html="content"></v-card-text>
-      <v-card-actions>
+      <v-card-actions v-if="author.id === $store.state.auth.user.id">
         <v-btn 
           large 
           outlined 
@@ -14,7 +14,7 @@
           nuxt
           :to="`/post/edit/${$route.params.id}`"
         >수정</v-btn>
-        <v-btn 
+        <v-btn
           large 
           outlined 
           color="error"

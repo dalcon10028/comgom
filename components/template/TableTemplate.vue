@@ -107,7 +107,7 @@ export default {
         {
           text: '작성자',
           sortable: false,
-          value: 'author.nickname',
+          value: 'author.username',
           width: '10%'
         },
         {
