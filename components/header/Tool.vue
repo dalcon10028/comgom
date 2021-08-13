@@ -37,18 +37,22 @@
           로그인
       </v-btn>
       <template v-else>
-        <Avartar />
+        <v-btn 
+          icon
+          nuxt
+          to="/user/profile">
+          <v-avatar size="32">
+            <v-img :src="loggedInUser.avatar" />
+          </v-avatar>
+        </v-btn>
       </template>
   </section>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import Avartar from './Avartar.vue';
 
-export default {
-  components: { Avartar },
-  
+export default {  
   data() {
     return {
       dialog: false,

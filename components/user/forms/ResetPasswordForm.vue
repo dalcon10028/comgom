@@ -63,7 +63,7 @@ export default {
           password: this.password1,
           passwordConfirmation: this.password2,
         };
-        await this.$axios.post('auth/reset-password', userData);
+        await this.$axios.post('/api/auth/reset-password', userData);
         alert('변경 성공!');
         this.$router.replace('/');
       } catch (error) {
