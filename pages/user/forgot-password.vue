@@ -9,7 +9,9 @@
 import ForgotPasswordForm from '~/components/user/forms/ForgotPasswordForm.vue'
 
 export default {
-  components: { ForgotPasswordForm }
+  components: { ForgotPasswordForm },
+  layout: "guest",
+  middleware: "guest"
 }
 </script>
 

@@ -78,6 +78,7 @@
           </v-chip-group>
 
           <v-textarea
+            v-model="review"
             filled
             label="리뷰"
             :rules="reviewRules"
@@ -111,12 +112,12 @@ import { mapGetters, mapMutations } from "vuex"
 
 export default {
   async asyncData({ $axios, params }) {
-    const { id, rating, lecture, professor, shortReview, credit, team, homework } = await $axios.$get(`/api/course-reviews/${params.id}`)
+    const { id, rating, lecture, professor, shortReview, credit, team, homework, review } = await $axios.$get(`/api/course-reviews/${params.id}`)
     const chips = {
       credit: credit + '학점',
       team, homework
     }
-    return { id, rating, lecture, professor, shortReview, chips }
+    return { id, rating, lecture, professor, shortReview, chips, review }
   },
 
   data() {
@@ -178,10 +179,10 @@ export default {
           homework: this.homeworks[this.chips.homework]
         }
         this.loading = true
-        await this.$axios.post('/api/course-reviews', reviewData)
+        await this.$axios.put(`/api/course-reviews/${this.$route.params.id}`, reviewData)
         this.loading = false
         this.$router.push('/home')
-        this.OPEN_SNACKBAR('20포인트가 적립되었습니다!')
+        this.OPEN_SNACKBAR('성공적으로 수정되었습니다!')
       }
     }
   }

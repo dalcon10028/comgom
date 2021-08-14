@@ -52,9 +52,9 @@
           돌아가기
         </v-btn>
         <v-spacer></v-spacer>
-        <small class="grey--text">좋아요 {{ like }}</small>
-        <v-btn icon color="grey" @click="$router.go(-1)">
-          <v-icon>mdi-heart-outline</v-icon>
+        <small class="grey--text">좋아요 {{ likeLength }}</small>
+        <v-btn icon :color="likeData ? 'red' : 'grey'" :loading="loading" @click="toggleLike">
+          <v-icon>mdi-heart{{ likeData ? '' : '-outline' }}</v-icon>
         </v-btn>
       </v-card-actions>
     </v-card>
@@ -65,13 +65,44 @@
 import { mapGetters } from "vuex"
 
 export default {
-  async asyncData({ $axios, params }) {
+  async asyncData({ $axios, params, store }) {
     const reviewData = await $axios.$get(`/api/course-reviews/${params.id}`)
-    return { ...reviewData }
+    const likeData = reviewData.likes.find(({ author }) => store.getters.loggedInUser.id === author)
+    return { ...reviewData, likeData, likeLength: reviewData.likes.length }
+  },
+
+  data() {
+    return {
+      loading: false
+    }
   },
 
   computed: {
     ...mapGetters(['loggedInUser'])
+  },
+
+  methods: {
+    async toggleLike() {
+      this.loading = true
+      try {
+        if (this.likeData) {
+          await this.$axios.delete(`/api/likes/${this.likeData.id}`)
+          this.likeData = null
+          this.likeLength = this.likeLength - 1
+        } else {
+          const likeData = await this.$axios.$post('/api/likes', {
+            author: this.loggedInUser.id,
+            course_review: this.$route.params.id
+          })
+          this.likeData = likeData
+          this.likeLength = this.likeLength + 1
+        }
+      } catch ({ response }) {
+        alert(response.data.message)
+      } finally {
+        this.loading = false
+      }
+    }
   }
 }
 </script>

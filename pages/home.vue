@@ -1,10 +1,12 @@
 <template>
   <main>
     <ReviewTemplate :review-data="reviewData"/>
-    <infinite-loading spinner="spiral" @infinite="infiniteHandler">
-      <div slot="no-more">더 이상 리뷰가 없습니다 새 리뷰를 작성해주세요!</div>
-      <div slot="no-results">첫 번째 강의리뷰를 작성해주세요!</div>
-    </infinite-loading>
+    <client-only placeholder="Loading...">
+      <infinite-loading spinner="spiral" @infinite="infiniteHandler">
+        <div slot="no-more">더 이상 리뷰가 없습니다 새 리뷰를 작성해주세요!</div>
+        <div slot="no-results">첫 번째 강의리뷰를 작성해주세요!</div>
+      </infinite-loading>
+    </client-only>
   </main>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
  <main class="text-center">
-     <h1>회원가입</h1>
-     <RegisterForm />
+    <h1>회원가입</h1>
+    <RegisterForm />
  </main>
 </template>
 
@@ -11,6 +11,7 @@ export default {
   components: {
     RegisterForm
   },
+  layout: 'guest',
   middleware: "guest"
 }
 </script>
