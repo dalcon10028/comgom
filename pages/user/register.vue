@@ -8,10 +8,10 @@
 <script>
 import RegisterForm from '~/components/user/forms/RegisterForm.vue'
 export default {
-    components: {
-        RegisterForm
-    },
-    middleware: "guest",
+  components: {
+    RegisterForm
+  },
+  middleware: "guest"
 }
 </script>
 

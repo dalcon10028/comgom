@@ -1,6 +1,5 @@
 <template>
   <main>
-    <h1>강의 후기</h1>
     <ReviewTemplate :review-data="reviewData"/>
   </main>
 </template>

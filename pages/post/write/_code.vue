@@ -41,14 +41,14 @@ export default {
   data() {
     return {
       title: '',
-      content: '<p></p>',
+      content: '<p></p>'
     }
   },
 
   methods: {
     changePost({ title, content }) {
-      this.title = title;
-      this.content = content;
+      this.title = title
+      this.content = content
     },
 
     async submit() {
@@ -57,11 +57,11 @@ export default {
         board: this.$route.params.code,
         author: this.$store.state.auth.user.id,
         content: this.content
-      };
-      const res = await this.$axios.$post('/api/posts', postData);
-      console.log(res);
-      alert('성공적으로 게시되었습니다!');
-      this.$router.go(-1);
+      }
+      const res = await this.$axios.$post('/api/posts', postData)
+      console.log(res)
+      alert('성공적으로 게시되었습니다!')
+      this.$router.go(-1)
     }
   }
 }

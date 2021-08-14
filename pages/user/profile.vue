@@ -25,20 +25,20 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from "vuex"
 
 export default {
-    middleware: "auth",
+  middleware: "auth",
     
-    computed: {
-        ...mapGetters(['loggedInUser'])
-    },
+  computed: {
+    ...mapGetters(['loggedInUser'])
+  },
     
-    methods: {
-        async logout() {
-        await this.$auth.logout();
-        }
+  methods: {
+    async logout() {
+      await this.$auth.logout()
     }
+  }
 }
 </script>
 

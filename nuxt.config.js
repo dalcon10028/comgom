@@ -1,6 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
 
-require("dotenv").config();
+require("dotenv").config()
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -20,7 +20,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/icon/64.ico' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap' }
     ]
   },
 
@@ -40,7 +40,7 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
+    '@nuxtjs/vuetify'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -88,7 +88,7 @@ export default {
     strategies: {
       local: {
         endpoints: {
-        login: {
+          login: {
             url: '/api/auth/local',
             method: 'post',
             propertyName: 'jwt'
@@ -97,12 +97,16 @@ export default {
             url: '/api/users/me',
             method: 'get',
             propertyName: false
-        },
-        logout: false
+          },
+          logout: false
+        }
       }
+    },
+    redirect: {
+      login: '/user/login',
+      logout: '/'
     }
-  }
-},
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

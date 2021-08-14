@@ -12,11 +12,11 @@ export default {
   components: { ResetPasswordForm },
   
   asyncData({ route, redirect }) {
-    if (!route.query.code) redirect('forgot-password');
+    if (!route.query.code) redirect('forgot-password')
     else return {
       code: route.query.code
     }
-  },
+  }
 }
 </script>
 

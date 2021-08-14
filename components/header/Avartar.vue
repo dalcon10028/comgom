@@ -75,7 +75,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from "vuex"
 
 export default {
   data() {
@@ -83,7 +83,7 @@ export default {
       fav: true,
       menu: false,
       message: false,
-      hints: true,
+      hints: true
     }
   },
   
@@ -93,7 +93,7 @@ export default {
 
   methods: {
     async logout() {
-      await this.$auth.logout();
+      await this.$auth.logout()
     }
   }
 }

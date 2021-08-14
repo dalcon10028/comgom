@@ -1,11 +1,10 @@
 <template>
-  <main>
-  </main>
+  <div></div>
 </template>
 
 <script>
 export default {
-  middleware: 'home'
+
 }
 </script>
 

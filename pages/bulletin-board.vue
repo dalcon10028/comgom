@@ -1,12 +1,12 @@
 <template>
   <main>
     <TemplateTitle :title="name" :explanation="explanation"/>
-    <TableTemplate :title-id="id" :posts="posts"/>
+    <TableTemplate :posts="posts"/>
   </main>
 </template>
 
 <script>
-import TemplateTitle from '~/components/template/common/TemplateTitle.vue';
+import TemplateTitle from '~/components/template/common/TemplateTitle.vue'
 import TableTemplate from '~/components/template/TableTemplate.vue'
 
 export default {
@@ -16,25 +16,23 @@ export default {
   },
 
   async asyncData({ $axios }) {
-    const boardData = await $axios.$get('/api/boards', {
-      params: { code: 'free' }
-    });
-    const { id, name, explanation } = boardData[0];
+    const { name, explanation } = await $axios.$get(`/api/boards/3`)
     const notices = await $axios.$get('/api/posts', {
       params: {
         board: 2,
         notice: true,
         _sort: 'id:DESC'
       }
-    });
+    })
     const posts = await $axios.$get('/api/posts', {
       params: {
-        board: id,
+        board: 3,
+        _limit: 9,
         _sort: 'id:DESC'
       }
-    });
-    return { id, name, explanation, posts: notices.concat(posts) }
-  },
+    })
+    return { name, explanation, posts: notices.concat(posts) }
+  }
 }
 </script>
 
