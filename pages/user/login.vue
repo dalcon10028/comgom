@@ -19,8 +19,7 @@ import LoginForm from '~/components/user/forms/LoginForm'
 
 export default {
   components: { LoginForm },
-  layout: 'guest',
-  middleware: "guest"
+  layout: 'guest'
 }
 </script>
 

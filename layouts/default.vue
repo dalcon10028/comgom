@@ -19,7 +19,8 @@ import BottomNavigation from '~/components/footer/BottomNavigation.vue'
 import Header from '~/components/header/Header.vue'
 
 export default {
-  components: { Header, BottomNavigation, Snackbar }
+  components: { Header, BottomNavigation, Snackbar },
+  middleware: 'auth'
 }
 </script>
     

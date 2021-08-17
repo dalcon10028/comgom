@@ -13,7 +13,8 @@
 import Snackbar from '~/components/common/Snackbar.vue'
 
 export default {
-  components: { Snackbar }
+  components: { Snackbar },
+  middleware: 'guest'
 }
 </script>
     

@@ -6,10 +6,10 @@ module.exports = {
       instances: 2,
       script: './node_modules/nuxt/bin/nuxt.js',
       args: 'start',
-      env: {
+      env_production: {
         HOST: '0.0.0.0',
-        PORT: 3000,
-        NODE_ENV: 'development'
+        PORT: 80,
+        NODE_ENV: 'production'
       }
     }
   ]

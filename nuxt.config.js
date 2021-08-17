@@ -6,7 +6,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - 대리미',
-    title: '대림대학교 커뮤니티',
+    title: '대림대학교 강의리뷰',
     htmlAttrs: {
       lang: 'ko'
     },
@@ -14,7 +14,9 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
+      { hid: 'og:title', property: 'og:title', content: '대림대 강의리뷰 - 대리미' },
+      { hid: 'og:image', property: 'og:image', content: 'https://i.ibb.co/1vYxX4S/og.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/icon/64.ico' },

@@ -78,6 +78,7 @@
           </v-chip-group>
 
           <v-textarea
+            v-model="review"
             filled
             label="리뷰"
             :rules="reviewRules"
@@ -172,7 +173,7 @@ export default {
         await this.$axios.post('/api/course-reviews', reviewData)
         this.loading = false
         this.$router.push('/home')
-        this.OPEN_SNACKBAR('20포인트가 적립되었습니다!')
+        this.OPEN_SNACKBAR('포인트가 적립되었습니다!')
       }
     }
   }

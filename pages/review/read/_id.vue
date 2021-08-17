@@ -76,6 +76,28 @@ export default {
       loading: false
     }
   },
+  
+  head() {
+    return {
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `강의 리뷰 ${this.lecture}`
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.shortReview
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: 'https://i.ibb.co/1vYxX4S/og.png'
+        }
+      ]
+    }
+  },
 
   computed: {
     ...mapGetters(['loggedInUser'])

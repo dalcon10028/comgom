@@ -2,7 +2,6 @@
   <v-bottom-navigation
     app
     grow
-    :value="value"
     color="primary"
   >
     <v-btn nuxt to="/home">
@@ -10,8 +9,8 @@
       <v-icon>mdi-home</v-icon>
     </v-btn>
 
-    <v-btn nuxt to="/bulletin-board">
-      <span>게시판</span>
+    <v-btn nuxt to="/timetable">
+      <span>시간표</span>
       <v-icon>mdi-bulletin-board</v-icon>
     </v-btn>
 
@@ -34,7 +33,6 @@
 
 <script>
 export default {
-  data: () => ({ value: 1 })
 }
 </script>
 

@@ -11,7 +11,7 @@ import ResetPasswordForm from '~/components/user/forms/ResetPasswordForm.vue'
 export default {
   components: { ResetPasswordForm },
   
-  middleware: "guest",
+  layout: 'guest',
   
   asyncData({ route, redirect }) {
     if (!route.query.code) redirect('/user/forgot-password')

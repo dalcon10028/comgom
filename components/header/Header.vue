@@ -10,6 +10,8 @@
           text
           nuxt
           color="primary"
+          class="font-weight-bold"
+          style="font-size: 1.5rem; font-family: 'Maplestory Light'"
           href="/">
           대리미
         </v-btn>

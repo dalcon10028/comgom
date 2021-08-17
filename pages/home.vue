@@ -18,8 +18,6 @@ export default {
     ReviewTemplate
   },
 
-  middleware: 'auth',
-
   async asyncData({ $axios }) {
     const reviewData = await $axios.$get('/api/course-reviews', {
       params: {
