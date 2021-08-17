@@ -148,7 +148,8 @@ export default {
           username: this.username,
           email: this.email + '@email.daelim.ac.kr',
           nickname: this.nickname,
-          password: this.password2
+          password: this.password2,
+          major: this.major
         }
         this.loading = true
         await this.$axios.post("/api/auth/local/register", userData)
