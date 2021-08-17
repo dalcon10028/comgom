@@ -13,10 +13,10 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: '대림대학교 강의 리뷰' },
       { name: 'format-detection', content: 'telephone=no' },
       { hid: 'og:title', property: 'og:title', content: '대림대 강의리뷰 - 대리미' },
-      { hid: 'og:image', property: 'og:image', content: 'https://i.ibb.co/1vYxX4S/og.png' }
+      { hid: 'og:image', property: 'og:image', content: 'https://i.ibb.co/Qc45HmW/og.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/icon/64.ico' },
