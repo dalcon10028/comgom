@@ -7,11 +7,11 @@
     show-arrows-on-hover
     >
     <v-carousel-item
-      v-for="(color, i) in colors"
-      :key="color"
+      v-for="(banner, i) in banners"
+      :key="i"
     >
       <v-sheet
-        :color="color"
+        :color="banner.color"
         height="100%"
         tile
       >
@@ -20,9 +20,9 @@
           align="center"
           justify="center"
         >
-          <div class="text-h2">
-            Slide {{ i + 1 }}
-          </div>
+          <v-btn text x-large class="banner" nuxt :href="banner.href">
+            {{ banner.text }}
+          </v-btn>
         </v-row>
       </v-sheet>
     </v-carousel-item>
@@ -31,19 +31,21 @@
 
 <script>
 export default {
-    data: () => ({
-      model: 0,
-      colors: [
-        'primary',
-        'secondary',
-        'yellow darken-2',
-        'red',
-        'orange',
-      ],
-    }),
+  data: () => ({
+    model: 0,
+    banners: [
+      { color: 'primary', text: '2학기 수강신청 기간 ( 8.23 ~ 8.27 )', href: 'https://www.daelim.ac.kr/cms/FrBoardCon/BoardView.do?MENU_ID=900&CONTENTS_NO=&SITE_NO=2&BOARD_SEQ=8&BBS_SEQ=126105' },
+      { color: 'secondary', text: '국가 장학금 2차 신청 일정 ( 8.17 ~ 9.16 )', href: 'https://www.daelim.ac.kr/cms/FrBoardCon/BoardView.do?MENU_ID=990&CONTENTS_NO=&SITE_NO=2&BOARD_SEQ=9&BBS_SEQ=127032' },
+      { color: 'accent', text: '2학기 등록금 납부 기간 ( 8.23 ~ 8.27 )', href: 'https://www.daelim.ac.kr/cms/FrBoardCon/BoardView.do?MENU_ID=900&CONTENTS_NO=&SITE_NO=2&BOARD_SEQ=8&BBS_SEQ=126093' }
+    ]
+  })
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.banner {
+  font-family: 'Noto Sans KR';
+  color: aliceblue;
+  font-size: xx-large;
+}
 </style>

@@ -2,6 +2,7 @@
   <v-bottom-navigation
     app
     grow
+    fixed
     color="primary"
   >
     <v-btn nuxt to="/home">

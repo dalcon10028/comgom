@@ -1,5 +1,6 @@
 <template>
   <main>
+    <Carousel />
     <ReviewTemplate :review-data="reviewData"/>
     <client-only placeholder="Loading...">
       <infinite-loading spinner="spiral" @infinite="infiniteHandler">
@@ -11,11 +12,13 @@
 </template>
 
 <script>
+import Carousel from '~/components/main/Carousel.vue'
 import ReviewTemplate from '~/components/template/ReviewTemplate.vue'
 
 export default {
   components: {
-    ReviewTemplate
+    ReviewTemplate,
+    Carousel
   },
 
   async asyncData({ $axios }) {
