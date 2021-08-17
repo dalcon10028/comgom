@@ -9,12 +9,21 @@
           <v-card-title>{{ review.lecture }}</v-card-title>
           <v-card-subtitle>{{ review.professor }}</v-card-subtitle>
           <v-card-text>
-            <v-rating
-              :value="review.rating"
-              readonly
-              background-color="orange lighten-3"
-              color="orange"
-            ></v-rating>
+            <v-row>
+              <v-rating
+                :value="review.rating"
+                readonly
+                background-color="orange lighten-3"
+                
+                color="orange"
+              >
+              </v-rating>
+              <v-spacer></v-spacer>
+              <div v-if="review.like > 0" class="mr-4">
+                <v-icon color="error">mdi-heart</v-icon>
+                <span class="error--text">+ {{ review.like }}</span> 
+              </div>
+            </v-row>
             {{ review.shortReview }}
           </v-card-text>
         </v-card>

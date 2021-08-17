@@ -54,6 +54,31 @@
           filled
         ></v-text-field>
 
+        <v-text-field
+          v-model="major"
+          :rules="majorRules"
+          label="학과 또는 학부"
+          required
+          outlined
+          filled
+        ></v-text-field>
+
+        <v-checkbox
+          :rules="[v => !!v || '개인정보 취급방침 동의에 체크해주세요']"
+          required
+        >
+          <template #label>
+            <div>
+              <a 
+                target="_blank"
+                href="https://assorted-poet-da7.notion.site/0d17f8c78fe24c209b62ba74493d3a80"
+                @click.stop
+              >개인정보 취급방침</a>
+              에 동의합니다.
+            </div>
+          </template>
+        </v-checkbox>
+
         <v-btn
           :disabled="!valid"
           color="primary"
@@ -67,16 +92,18 @@
         </v-btn>
     </v-form>
     <v-btn class="mt-8" text color="accent" nuxt to="/user/login">로그인으로 돌아가기</v-btn>
-    <!-- <v-divider class="ma-4"></v-divider>
+    <v-divider class="ma-4"></v-divider>
     <div class="ma-5 text-center">
-      <v-btn text color="accent">학생증 인증으로 회원가입</v-btn>
-    </div> -->
+      <StudentCard />
+    </div>
     </v-card>
   </section>
 </template>
 
 <script>
+import StudentCard from './StudentCard.vue'
 export default {
+  components: { StudentCard },
   data() {
     return {
       valid: true,
@@ -95,6 +122,10 @@ export default {
       nickname: '',
       nicknameRules: [
         v => !!v || '닉네임을 입력해주세요!'
+      ],
+      major: '',
+      majorRules: [
+        v => !!v || '학과/학부를 입력해주세요!'
       ],
       password1: '',
       password1Rules: [
