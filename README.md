@@ -17,7 +17,12 @@
 
 <br/>
 <br/>
-<h2 align="center">구경하기</h2>
+<h2 align="center">
+구경하기
+
+[https://daelimi.site/home](https://daelimi.site/home)
+
+</h2>
 
 <p align="center">아이디: admin, 비밀번호: 123456</p>
 
