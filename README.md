@@ -1,4 +1,37 @@
-# comgom
+<h1 align="center">Daelimi</h1>
+<p align="center">
+대림대학교 강의리뷰 서비스
+</p>
+
+<br/>
+
+<div align="center">
+    <img src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+    <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+    <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+    <img src="https://img.shields.io/badge/vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" />
+    <img src="https://img.shields.io/badge/vuetify-1867C0?style=for-the-badge&logo=vuetify&logoColor=white" />
+    <img src="https://img.shields.io/badge/nuxt.js-00C58E?style=for-the-badge&logo=nuxt.js&logoColor=white" />
+    <img src="https://img.shields.io/badge/AmazonAWS-232F3E?style=for-the-badge&logo=AmazonAWS&logoColor=white" />
+</div>
+
+<br/>
+<br/>
+<h2 align="center">구경하기</h2>
+
+<p align="center">아이디: admin, 비밀번호: 123456</p>
+
+<br/>
+<br/>
+<div align="center">
+    <img src="./docs/images/01.PNG" />
+    <img src="./docs/images/02.PNG" />
+    <img src="./docs/images/03.PNG" />
+    <img src="./docs/images/04.PNG" />
+</div>
+
+<br/>
+<br/>
 
 ## Build Setup
 
@@ -19,51 +52,36 @@ $ npm run generate
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
-## Special Directories
+<br/>
+<br/>
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+## 프로젝트 구조
 
-### `assets`
+### ERD
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+<img src="./docs/images/07.PNG" />
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+### [자세히 보기](https://www.erdcloud.com/d/2xAPqYbHvQvqZLPQP)
 
-### `components`
+<br/>
+<br/>
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+## 모바일 기준 UI/UX
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+대부분의 사용자가 모바일 접속이 예상되기 때문에 모바일 기준으로 Vuetify를 사용하여 반응형으로디자인 하였습니다.
 
-### `layouts`
+<br/>
+<br/>
 
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+## Validation Check
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+<img src="./docs/images/05.PNG" />
 
+서버에 잘못된 값이 넘어가지 않도록 javascript 유효성 검사를 하도록 했습니다. ( 로그인, 리뷰작성 등에 적용되었습니다. )
 
-### `pages`
+<br/>
+<br/>
 
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
+## Infinite Scroll
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+스크롤이 페이지 맨 밑에 도달할 때마다 10개씩 강의리뷰를 가져올 수 있도록 하였습니다.
