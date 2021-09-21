@@ -60,17 +60,6 @@ For detailed explanation on how things work, check out the [documentation](https
 <br/>
 <br/>
 
-## 프로젝트 구조
-
-### ERD
-
-<img src="./docs/images/07.PNG" />
-
-### [자세히 보기](https://www.erdcloud.com/d/2xAPqYbHvQvqZLPQP)
-
-<br/>
-<br/>
-
 ## 모바일 기준 UI/UX
 
 대부분의 사용자가 모바일 접속이 예상되기 때문에 모바일 기준으로 Vuetify를 사용하여 반응형으로디자인 하였습니다.
