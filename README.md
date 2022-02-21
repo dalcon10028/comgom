@@ -17,12 +17,6 @@
 
 <br/>
 <br/>
-<h2 align="center">
-구경하기
-
-[https://daelimi.site/home](https://daelimi.site/home)
-
-</h2>
 
 <p align="center">아이디: admin, 비밀번호: 123456</p>
 
@@ -79,3 +73,6 @@ For detailed explanation on how things work, check out the [documentation](https
 ## Infinite Scroll
 
 스크롤이 페이지 맨 밑에 도달할 때마다 10개씩 강의리뷰를 가져올 수 있도록 하였습니다.
+
+## ERD
+[https://www.erdcloud.com/p/2xAPqYbHvQvqZLPQP](https://www.erdcloud.com/p/2xAPqYbHvQvqZLPQP)
